@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  const API_BASE = 'http://localhost:4000';
+  const API_BASE = 'https://gyansutra-academy.onrender.com';
 
   /* ── DOM ── */
   const cdLoading    = document.getElementById('cdLoading');

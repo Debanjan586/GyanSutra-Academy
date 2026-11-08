@@ -1,5 +1,5 @@
 /* ── Config ── */
-const API = 'http://localhost:4000';
+const API = 'https://gyansutra-academy.onrender.com';
 
 const form      = document.getElementById('loginForm');
 const btn       = document.getElementById('loginBtn');

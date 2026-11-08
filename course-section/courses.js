@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  const API_BASE = "http://localhost:4000";
+  const API_BASE = "https://gyansutra-academy.onrender.com";
   const ENDPOINT = API_BASE + "/api/courses";
 
   const GROUPS_LIMIT = 4; // max groups before "Show More Groups"

@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const API = 'http://localhost:4000'; // demo: calls will fail gracefully, this is just to preview UI/UX
+  const API = 'https://gyansutra-academy.onrender.com'; // demo: calls will fail gracefully, this is just to preview UI/UX
 
   /* ── Auth guard (disabled in static preview) ── */
 
