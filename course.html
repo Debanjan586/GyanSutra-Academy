@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="resources/gyansutra-favicon.png" type="image/x-icon">
+  <title>Course — GyanSutra Academy</title>
+  <meta name="description" content="Course details at GyanSutra Academy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./course-page/course.css">
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header" id="top">
+  <div class="wrap nav-wrap">
+
+    <a href="#home" aria-label="GyanSutra Academy Home">
+      <img src="resources/logo.png" alt="GyanSutra Academy" class="brand-logo">
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <ul class="nav-list">
+
+        <li><a href="#home" class="nav-link active">Home</a></li>
+
+        <li class="has-drop">
+          <button class="nav-link drop-btn" aria-expanded="false" aria-haspopup="true">
+            About Us
+            <svg class="chev" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="dropdown">
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#mentors">Our Mentors</a></li>
+            <li><a href="#why">Why GyanSutra</a></li>
+          </ul>
+        </li>
+
+        <li class="has-drop">
+          <button class="nav-link drop-btn" aria-expanded="false" aria-haspopup="true">
+            Resources
+            <svg class="chev" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="dropdown">
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ══ CONTENT ══ -->
+<main class="cd-main">
+
+  <!-- Loading state -->
+  <div class="cd-loading" id="cdLoading">
+    <div class="cd-skeleton-hero"></div>
+    <div class="cd-skeleton-body">
+      <div class="cd-skeleton-line w60"></div>
+      <div class="cd-skeleton-line w40"></div>
+      <div class="cd-skeleton-line w100"></div>
+      <div class="cd-skeleton-line w100"></div>
+      <div class="cd-skeleton-line w80"></div>
+    </div>
+  </div>
+
+  <!-- Error state -->
+  <div class="cd-state hidden" id="cdError">
+    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+    <p>Course not found or could not be loaded.</p>
+    <a href="index.html#courses" class="cd-back-btn">← Back to Courses</a>
+  </div>
+
+  <!-- Course detail -->
+  <div class="cd-wrap hidden" id="cdContent">
+
+    <!-- Breadcrumb -->
+    <nav class="cd-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      <a href="index.html#courses">Courses</a>
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      <span id="cdBreadTitle">Loading…</span>
+    </nav>
+
+    <div class="cd-layout">
+
+      <!-- Left: main content -->
+      <div class="cd-left">
+
+        <!-- Thumbnail -->
+        <div class="cd-thumb-wrap" id="cdThumbWrap"></div>
+
+        <!-- Tags -->
+        <div class="cd-tags" id="cdTags"></div>
+
+        <!-- Title -->
+        <h1 class="cd-title" id="cdTitle"></h1>
+
+        <!-- Short description -->
+        <p class="cd-short" id="cdShort"></p>
+
+        <!-- Full description -->
+        <div class="cd-desc-label">About this Course</div>
+        <div class="cd-desc" id="cdDesc"></div>
+
+      </div>
+
+      <!-- Right: info card -->
+      <aside class="cd-aside">
+        <div class="cd-card">
+
+          <div class="cd-price-block" id="cdPrice"></div>
+
+          <div class="cd-info-rows" id="cdInfoRows"></div>
+
+          <a href="index.html#contact" class="cd-cta" id="cdCta">
+            Book Your Seat
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+
+          <p class="cd-cta-note">No registration fee. Our team will contact you.</p>
+
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- Bottom CTA banner -->
+    <div class="cd-bottom-banner">
+      <div class="cd-banner-text">
+        <h2>Ready to start your journey?</h2>
+        <p>Join our community of learners and build skills that matter.</p>
+      </div>
+      <a href="index.html#contact" class="cd-cta cd-cta-large">
+        Book Your Seat
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+<script src="./course-page/course.js"></script>
+</body>
+</html>

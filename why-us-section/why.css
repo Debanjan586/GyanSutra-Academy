@@ -1,0 +1,307 @@
+/* ===================== WHY GYANSUTRA — comparison table ===================== */
+
+.why-section {
+  position: relative;
+  background: var(--solid-bg);
+  padding: 72px 0 90px;
+}
+
+.why-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Heading (inline, not boxed) ---------- */
+
+.why-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.why-header .section-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.why-header .section-label span {
+  display: inline-block;
+  width: 36px;
+  height: 2px;
+  background: var(--amber-text);
+}
+
+.why-header h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+
+.why-header h2 .amber {
+  color: var(--amber-text);
+}
+
+.why-header p {
+  max-width: 560px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ---------- Comparison table scroll container ---------- */
+
+.why-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+
+  cursor: grab;
+
+  /* Subtle fade hint */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 16px,
+    #000 calc(100% - 16px),
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 16px,
+    #000 calc(100% - 16px),
+    transparent 100%
+  );
+
+  /* Firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--amber) #ffffff;
+}
+
+.why-table-scroll:active {
+  cursor: grabbing;
+}
+
+.why-table-scroll.is-dragging {
+  scroll-behavior: auto;
+}
+
+/* ---------- Custom scrollbar: Chrome, Safari, Edge ---------- */
+
+.why-table-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.why-table-scroll::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.why-table-scroll::-webkit-scrollbar-thumb {
+  background: var(--amber);
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+}
+
+.why-table-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--amber-text);
+}
+
+.why-table-scroll::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* ---------- Comparison table ---------- */
+
+.why-table {
+  width: 100%;
+  min-width: 640px;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  background: var(--card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+/* ---------- Table header ---------- */
+
+.why-table thead th {
+  padding: 20px 24px;
+
+  font-size: 12px;
+  font-weight: 800;
+  text-align: left;
+  letter-spacing: 0.02em;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.why-table thead th:first-child {
+  width: 26%;
+
+  color: var(--muted);
+
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+
+  scroll-snap-align: start;
+}
+
+.why-table thead th.why-col-left,
+.why-table thead th.why-col-right {
+  scroll-snap-align: start;
+}
+
+.why-table thead th.why-col-left {
+  color: var(--muted);
+}
+
+.why-table thead th.why-col-right {
+  color: var(--ink);
+
+  background: var(--amber-soft, rgba(217, 154, 37, 0.1));
+
+  position: relative;
+}
+
+.why-table thead th.why-col-right::before {
+  content: "✓";
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: var(--amber);
+  color: var(--ink);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  margin-right: 8px;
+}
+
+/* ---------- Table body ---------- */
+
+.why-table tbody td {
+  padding: 18px 24px;
+
+  font-size: clamp(8px, 1vw, 13px);
+  line-height: 1.55;
+
+  vertical-align: top;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.why-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.why-table tbody td.why-feature {
+  font-weight: 700;
+  color: var(--ink);
+
+  font-size: clamp(8px, 1vw, 13px);
+}
+
+.why-table tbody td.why-col-left {
+  color: var(--muted);
+}
+
+.why-table tbody td.why-col-left::before {
+  content: "–";
+
+  display: inline-block;
+  margin-right: 8px;
+
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.why-table tbody td.why-col-right {
+  color: var(--ink);
+
+  background: var(--amber-soft, rgba(217, 154, 37, 0.06));
+
+  font-weight: 500;
+}
+
+.why-table tbody td.why-col-right::before {
+  content: "✓";
+
+  display: inline-block;
+  margin-right: 8px;
+
+  color: var(--amber-text);
+  font-weight: 800;
+}
+
+/* ---------- Hover effects ---------- */
+
+.why-table tbody tr:hover td {
+  background: rgba(217, 154, 37, 0.05);
+}
+
+.why-table tbody tr:hover td.why-col-right {
+  background: rgba(217, 154, 37, 0.12);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 680px) {
+  .why-section {
+    padding: 56px 0 64px;
+  }
+
+  .why-wrap {
+    padding: 0 16px;
+  }
+
+  .why-table-scroll {
+    cursor: grab;
+  }
+
+  .why-table-scroll:active {
+    cursor: grabbing;
+  }
+
+  .why-table thead th,
+  .why-table tbody td {
+    padding: 14px 16px;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .why-table-scroll {
+    scroll-behavior: auto;
+  }
+}

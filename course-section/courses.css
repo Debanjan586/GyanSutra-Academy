@@ -1,0 +1,686 @@
+/* ============================================================
+   GyanSutra Academy — Courses section styles
+   Touches ONLY .courses-* and .course-* classes.
+   All tokens come from :root in style.css — nothing redeclared.
+   ============================================================ */
+
+/* ---------- Section wrapper ---------- */
+
+.courses-wrap {
+  /* override the full-viewport height set in .c-wrap for other sections */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding-inline: clamp(16px, 4vw, 48px);
+}
+
+/* ---------- Sub-heading ---------- */
+.courses-sub {
+  margin-top: 10px;
+  font-size: clamp(0.7rem, 0.9vw, 1.05rem);
+  color: var(--muted);
+  text-align: center;
+  max-width: 580px;
+  line-height: 1.6;
+}
+
+/* ---------- Filter tabs ---------- */
+.courses-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+  margin-bottom: 48px;
+}
+
+.cf-btn {
+  padding: 7px 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition:
+    background 0.18s,
+    border-color 0.18s,
+    color 0.18s;
+  white-space: nowrap;
+}
+
+.cf-btn:hover {
+  background: var(--card);
+  border-color: var(--amber);
+  color: var(--ink);
+}
+
+.cf-btn.active {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* ---------- Grid ---------- */
+.courses-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1px, 6vw, 28px);
+}
+
+/* ---------- Skeleton loading ---------- */
+.courses-grid.courses-loading {
+  pointer-events: none;
+}
+
+.course-skeleton {
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+    90deg,
+    var(--card) 25%,
+    #f0e8cc 50%,
+    var(--card) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.4s infinite;
+  height: 380px;
+}
+
+@keyframes skeletonShimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* ---------- State screens (error / empty) ---------- */
+.courses-state {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 64px 24px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.courses-state svg {
+  opacity: 0.55;
+}
+
+.courses-state p {
+  font-size: 1rem;
+  max-width: 340px;
+  line-height: 1.6;
+}
+
+.courses-retry {
+  margin-top: 4px;
+  padding: 9px 24px;
+  border-radius: 999px;
+  border: 1.5px solid var(--amber);
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.18s;
+}
+
+.courses-retry:hover {
+  background: var(--amber);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- Course card ---------- */
+.course-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+box-shadow: 0 4px 8px -4px rgba(20, 24, 31, 0.15);
+  transition: box-shadow 0.22s ease;
+  position: relative;
+}
+
+.course-card:hover {
+box-shadow: 0 4px 16px -4px rgba(20, 24, 31, 0.15);
+}
+
+/* Offer / discount ribbon */
+.course-card .offer-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #22c55e;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 10px 4px 7px;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+.offer-badge .offer-tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.offer-badge .offer-tick svg {
+  display: block;
+}
+
+/* Thumbnail */
+.course-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--card);
+}
+
+.course-thumb-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, var(--card) 0%, #e8d8a0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--amber-dark);
+}
+
+/* Card body */
+.course-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+}
+
+/* Meta row: category + level */
+.course-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.course-tag {
+  font-size: 0.60rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  color: var(--muted);
+  background: transparent;
+  line-height: 1.4;
+}
+
+.course-tag.tag-category {
+  border-color: rgba(246, 185, 43, 0.45);
+  color: #7d5e08;
+  background: rgba(246, 185, 43, 0.12);
+}
+
+/* Title */
+.course-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.38;
+}
+
+/* Short description */
+.course-desc {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Duration row */
+.course-duration {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.course-duration svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* Divider */
+.course-divider {
+  height: 1px;
+  background: var(--line);
+  margin-block: 2px;
+}
+
+/* Price row */
+.course-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.course-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.price-offer {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.price-regular {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: rgba(92, 99, 109, 0.5);
+}
+
+/* When no offer — just show regular price */
+.price-only {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+/* Course CTA */
+.course-cta {
+  flex-shrink: 0;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--amber);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-radius 0.3s ease-in-out;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1.5;
+}
+
+.course-cta:hover {
+  background: var(--amber-dark);
+  border-radius: 4px;
+}
+
+.course-cta:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.course-cta:active {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .course-cta {
+    transition: none;
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+/* Laptop / wide tablet */
+@media (max-width: 1243px) {
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .courses-section {
+    padding-block: 56px 72px;
+  }
+  .courses-sub {
+  margin-top: 10px;
+  font-size: clamp(0.5rem, 1vw, 1.05rem);
+  color: var(--muted);
+  text-align: center;
+  max-width: 580px;
+  line-height: 1.6;
+}
+}
+
+/* Tablet */
+@media (max-width: 799px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .courses-section {
+    padding-block: 48px 64px;
+  }
+
+  .courses-filters {
+    margin-bottom: 36px;
+  }
+
+  .course-skeleton {
+    height: 340px;
+  }
+    .courses-sub {
+  margin-top: 10px;
+  font-size: clamp(0.5rem, 1.3vw, 1.05rem);
+  color: var(--muted);
+  text-align: center;
+  max-width: 580px;
+  line-height: 1.6;
+}
+}
+
+/* Mobile */
+@media (max-width: 530px) {
+  .courses-section {
+    padding-block: 40px 56px;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .courses-filters {
+    margin-bottom: 28px;
+    gap: 6px;
+  }
+
+  .cf-btn {
+    padding: 6px 16px;
+    font-size: 0.82rem;
+  }
+
+  .course-body {
+    padding: 16px 18px 18px;
+  }
+
+  .course-skeleton {
+    height: 320px;
+  }
+
+  .course-price-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .course-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* ---------- Show More / Show Less button ---------- */
+.courses-toggle-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 36px 0 8px;
+}
+
+.courses-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 28px;
+  border-radius: 999px;
+  border: 1.5px solid var(--amber);
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    border-color 0.18s,
+    color 0.18s,
+    transform 0.15s;
+}
+
+.courses-toggle-btn:hover {
+  background: var(--amber);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.courses-toggle-btn:active {
+  transform: translateY(0);
+}
+
+.ctb-icon {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.22s ease;
+}
+
+.courses-toggle-btn[aria-expanded="true"] .ctb-icon {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 530px) {
+  .courses-toggle-wrap {
+    padding: 28px 0 4px;
+  }
+  .courses-toggle-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 24px;
+  }
+}
+
+/* ================================================================
+   GROUPED VIEW
+================================================================ */
+
+/* Grid becomes a plain column container in grouped mode */
+.courses-grid--grouped {
+  display: flex !important;
+  flex-direction: column;
+  gap: 52px;
+  width: 100%;
+}
+
+/* Flat mode keeps the original grid */
+.courses-grid--flat {
+  display: grid !important;
+}
+
+/* ── Group block ── */
+.cg-group {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  scroll-margin-top: 108px; /* header height + breathing room */
+}
+
+/* Group header row */
+.cg-group-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  text-align: left;
+}
+
+@media (max-width: 799px) {
+  .cg-group-header {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.cg-group-title {
+  font-size: clamp(0.4rem, 2vw, 0.9rem);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.cg-group-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  height: 2px;
+  background: var(--amber);
+  border-radius: 2px;
+}
+
+@media (max-width: 799px) {
+  .cg-group-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.cg-group-count {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* ── Horizontal scroll row ── */
+.cg-row-wrap {
+  position: relative;
+}
+
+.cg-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 12px; /* space for scrollbar */
+  /* hide scrollbar visually but keep scroll */
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+.cg-row::-webkit-scrollbar {
+  height: 4px;
+}
+.cg-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+.cg-row::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+
+/* Card wrapper inside row: fixed width so they don't shrink */
+.cg-card-wrap {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 800px) {
+  .cg-card-wrap {
+    flex: 0 0 300px;
+  }
+}
+
+@media (min-width: 1244px) {
+  .cg-card-wrap {
+    flex: 0 0 320px;
+  }
+}
+
+/* ── Scroll arrow buttons ── */
+.cg-scroll-btn {
+  display: none; /* shown via JS when overflow exists */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(20, 24, 31, 0.1);
+  color: var(--ink);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+/* Only show arrow buttons on desktop — on mobile, swipe is natural */
+@media (min-width: 800px) {
+  .cg-scroll-btn:not([hidden]) {
+    display: flex;
+  }
+}
+
+.cg-scroll-btn--left {
+  left: -18px;
+}
+.cg-scroll-btn--right {
+  right: -18px;
+}
+
+.cg-scroll-btn:hover {
+  border-color: var(--amber);
+  box-shadow: 0 4px 14px rgba(20, 24, 31, 0.13);
+}
+
+/* ── Mobile: cap at 4 groups, rest hidden via JS ── */
+@media (max-width: 799px) {
+  .courses-grid--grouped {
+    gap: 40px;
+  }
+  .cg-group {
+    gap: 14px;
+  }
+  .cg-card-wrap {
+    flex: 0 0 260px;
+  }
+}

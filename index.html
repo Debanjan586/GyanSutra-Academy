@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      href="resources/gyansutra-favicon.png"
+      type="image/x-icon"
+    />
+    <title>GyanSutra Academy</title>
+    <meta
+      name="description"
+      content="Build real skills, boost your confidence and achieve your goals with expert guidance and practical learning at GyanSutra Academy."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./course-section/courses.css" />
+    <link rel="stylesheet" href="./why-us-section/why.css" />
+  </head>
+  <body>
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="top">
+      <div class="wrap nav-wrap">
+        <a href="#home" aria-label="GyanSutra Academy Home">
+          <img
+            src="resources/logo.png"
+            alt="GyanSutra Academy"
+            class="brand-logo"
+          />
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+
+            <li><a href="#courses" class="nav-link">Courses</a></li>
+
+            <li><a href="#why" class="nav-link">Why GyanSutra</a></li>
+
+            <li class="has-drop">
+              <button
+                class="nav-link drop-btn"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                Resources
+                <svg
+                  class="chev"
+                  viewBox="0 0 24 24"
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <ul class="dropdown">
+                <li><a href="#faq">FAQs</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+
+          <!-- Get Started inside mobile menu -->
+          <a href="#contact" class="nav-cta-mobile">Get Started</a>
+        </nav>
+
+        <div class="nav-actions">
+          <!-- Get Started — desktop -->
+          <a href="#contact" class="nav-cta">
+            Get Started
+            <svg
+              viewBox="0 0 24 24"
+              width="15"
+              height="15"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="home">
+        <div class="hero-wrap">
+          <!-- Photo -->
+          <div
+            class="hero-frame"
+            role="img"
+            aria-label="A student smiling while studying at her desk"
+          >
+            <p class="hero-script" aria-hidden="true">
+              Better<br />Skills<br />Bigger<br />Dreams
+            </p>
+          </div>
+
+          <!-- Floating card -->
+          <div class="hero-card">
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              Learn <i>|</i> Grow <i>|</i> Build Your Future
+            </p>
+
+            <h1>
+              Quality Education for a
+              <span class="amber">Brighter</span> Tomorrow
+            </h1>
+
+            <p class="hero-text">
+              At GyanSutra Academy, we help you build real skills, boost your
+              confidence and achieve your goals &mdash; with expert guidance and
+              practical learning.
+            </p>
+
+            <!-- Hero buttons — styled by .hero-card .hero-actions in CSS, not global .btn -->
+            <div class="hero-actions">
+              <a href="#courses" class="btn-primary">
+                Explore Courses
+                <svg
+                  viewBox="0 0 24 24"
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+              <a href="#courses" class="btn-secondary">Our Programs</a>
+            </div>
+
+            <ul class="checks">
+              <li>
+                <span class="tick">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="11"
+                    height="11"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="m5 12 5 5 9-10" />
+                  </svg>
+                </span>
+                Government Registered
+              </li>
+              <li>
+                <span class="tick">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="11"
+                    height="11"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="m5 12 5 5 9-10" />
+                  </svg>
+                </span>
+                MSME Certified
+              </li>
+              <li>
+                <span class="tick">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="11"
+                    height="11"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="m5 12 5 5 9-10" />
+                  </svg>
+                </span>
+                Skill India Approved
+              </li>
+            </ul>
+          </div>
+
+          <!-- Rating badge — stays inside hero-wrap so position:absolute works relative to it -->
+          <div class="rating-badge" aria-label="4.8 rating, 1200+ students">
+            <div class="rating-top">
+              <svg
+                class="star"
+                viewBox="0 0 24 24"
+                width="32"
+                height="32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9z"
+                />
+              </svg>
+              <div>
+                <strong>4.8</strong>
+                <small>120+ Students</small>
+              </div>
+            </div>
+            <div class="avatars" aria-hidden="true">
+              <span><img src="resources/girl-image.avif" alt="Rai" /></span
+              ><span><img src="resources/boy-image.avif" alt="Ram" /></span
+              ><span><img src="resources/girl-image2.avif" alt="Riya" /></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ COURSES ============ -->
+      <section class="section courses-section" id="courses">
+        <div class="c-wrap courses-wrap">
+          <p class="section-label">
+            <span></span>Featured Courses<span></span>
+          </p>
+
+          <p class="courses-sub">
+            Explore professional training programs designed to develop practical
+            skills, confidence, and expertise.
+          </p>
+
+          <!-- Filter tabs -->
+          <div
+            class="courses-filters"
+            id="coursesFilters"
+            role="tablist"
+            aria-label="Filter courses by category"
+          >
+            <button
+              class="cf-btn active"
+              role="tab"
+              aria-selected="true"
+              data-filter="all"
+            >
+              All
+            </button>
+          </div>
+
+          <!-- Loading skeleton (JS replaces these immediately with the right count) -->
+          <div
+            class="courses-grid courses-loading"
+            id="coursesGrid"
+            aria-live="polite"
+            aria-label="Course listings"
+          >
+            <div class="course-skeleton"></div>
+            <div class="course-skeleton"></div>
+            <div class="course-skeleton"></div>
+            <div class="course-skeleton"></div>
+          </div>
+
+          <!-- Error state (hidden by default) -->
+          <div
+            class="courses-state courses-error hidden"
+            id="coursesError"
+            role="alert"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="40"
+              height="40"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4M12 16h.01" />
+            </svg>
+            <p>Couldn't load courses right now. Please try again shortly.</p>
+            <button class="courses-retry" id="coursesRetry">Try again</button>
+          </div>
+
+          <!-- Empty state (hidden by default) -->
+          <div class="courses-state courses-empty hidden" id="coursesEmpty">
+            <svg
+              viewBox="0 0 24 24"
+              width="40"
+              height="40"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+              />
+            </svg>
+            <p>No courses available yet — check back soon!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WHY GYANSUTRA ============ -->
+      <section class="section why-section" id="why">
+        <div class="why-wrap">
+          <div class="why-header" id="whyHeader">
+            <!-- filled dynamically from ./why-us-section/why-data.json -->
+          </div>
+
+          <div class="why-table-wrap" id="whyTableWrap">
+            <!-- comparison table injected dynamically from ./why-us-section/why-data.json -->
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script src="./course-section/courses.js"></script>
+    <script src="./why-us-section/why.js"></script>
+  </body>
+</html>

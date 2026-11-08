@@ -1,0 +1,37 @@
+{
+  "heading": {
+    "label": "Why GyanSutra",
+    "title": "Reasons to Choose <span class=\"amber\">GyanSutra Academy</span>",
+    "subtitle": "Government-backed, practical, and built for everyone passionate about speech & language development."
+  },
+  "columns": {
+    "left": "Other Institutes",
+    "right": "GyanSutra Academy"
+  },
+  "rows": [
+    {
+      "id": "government-recognition",
+      "feature": "Government Recognition",
+      "left": "Not registered or affiliated",
+      "right": "Govt. Registered, MSME & Skill India backed"
+    },
+    {
+      "id": "core-skills",
+      "feature": "Core Skills Focus",
+      "left": "Generic, theory-heavy content",
+      "right": "Emotional & linguistic applications through interactive, play-based methods"
+    },
+    {
+      "id": "professional-training",
+      "feature": "Professional Training",
+      "left": "Limited hands-on practice",
+      "right": "Practical, hands-on growth & child development training"
+    },
+    {
+      "id": "for-everyone",
+      "feature": "Who It's For",
+      "left": "Restricted to one audience type",
+      "right": "Built for parents, teachers, therapists & students alike"
+    }
+  ]
+}

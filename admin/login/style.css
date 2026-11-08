@@ -1,0 +1,164 @@
+ :root {
+      --bg:       #f3e6c1;
+      --card:     #fbf6e1;
+      --white:    #ffffff;
+      --ink:      #14181f;
+      --muted:    #5c636d;
+      --amber:    #f6b92b;
+      --amber-dk: #e0a820;
+      --line:     rgba(20,24,31,0.13);
+      --radius:   20px;
+      --font:     "Plus Jakarta Sans", system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Layout ── */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 40px rgba(20,24,31,0.10);
+      width: 100%;
+      max-width: 420px;
+      padding: 44px 40px 40px;
+    }
+
+    /* ── Brand ── */
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+    .brand-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+    .brand-icon svg { display: block; }
+    .brand h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .brand p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ── Form ── */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    input {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--line);
+      border-radius: 10px;
+      font-family: var(--font);
+      font-size: 0.95rem;
+      color: var(--ink);
+      background: var(--card);
+      outline: none;
+      transition: border-color 0.18s;
+    }
+    input:focus { border-color: var(--amber); background: var(--white); }
+    input::placeholder { color: #aaa; }
+
+    /* ── Error alert ── */
+    .alert {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #fee2e2;
+      color: #b91c1c;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+    .alert.show { display: flex; }
+
+    /* ── Submit ── */
+    .btn-login {
+      width: 100%;
+      padding: 13px;
+      border-radius: 999px;
+      border: none;
+      background: var(--amber);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.18s, opacity 0.18s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .btn-login:hover:not(:disabled) { background: var(--amber-dk); }
+    .btn-login:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .spinner {
+      width: 16px; height: 16px;
+      border: 2.5px solid rgba(20,24,31,0.25);
+      border-top-color: var(--ink);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+    .btn-login.loading .spinner { display: block; }
+    .btn-login.loading .btn-text { display: none; }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .back-link {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .back-link a {
+      color: var(--ink);
+      font-weight: 600;
+      border-bottom: 1.5px solid var(--amber);
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 32px 22px 28px; }
+    }
